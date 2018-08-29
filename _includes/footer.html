@@ -1,0 +1,26 @@
+<footer class="center">
+  <div class="measure">
+    <small>
+      {{ site.title }} 
+      | <a href="{{ site.url }}/kontak/" class="site-title">Kontak</a> 
+      | <a href="{{ site.url }}/testi/" class="site-title">Testimoni</a> 
+      <br>Sistem belanja yang mudah - kualitas produk terbaik - layanan professional
+    </small>
+  </div>
+</footer>
+
+<!-- TEST JEKYLL CONDITIONAL 1:{{ page.layout }}, 2:{{ layout.layout }},  3:{{ page.title }}  -->
+
+<script src="{{ site.url }}/css/flickity.pkgd.min.js"></script>
+
+<script>
+function show(r,e){setTimeout(function(){document.getElementById(r).style.visibility="visible"},e)}function hide(r,e){setTimeout(function(){document.getElementById(r).style.visibility="hidden"},e)}function gr(r,e){return Math.floor(Math.random()*(e-r+1))+r}var myArray=["sa","sb","sc","sd","se","sf"],ra=myArray[Math.floor(Math.random()*myArray.length)],rb=myArray[Math.floor(Math.random()*myArray.length)],rc=myArray[Math.floor(Math.random()*myArray.length)],rd=myArray[Math.floor(Math.random()*myArray.length)],re=myArray[Math.floor(Math.random()*myArray.length)],rf=myArray[Math.floor(Math.random()*myArray.length)],rg=myArray[Math.floor(Math.random()*myArray.length)],rh=myArray[Math.floor(Math.random()*myArray.length)],ri=myArray[Math.floor(Math.random()*myArray.length)],rj=myArray[Math.floor(Math.random()*myArray.length)];show(ra,1e4),hide(ra,13e3),show(rb,3e4),hide(rb,33e3),show(rc,55e3),hide(rc,58e3),show(rd,7e4),hide(rd,73e3),show(re,92e3),hide(re,95e3),show(rf,105e3),hide(rf,108e3),show(rg,12e4),hide(rg,123e3),show(rh,13e4),hide(rh,133e3),show(ri,15e4),hide(ri,153e3),show(rj,16e4),hide(rj,163e3);function freeOngkir(){var e=23-(new Date).getHours();document.getElementById("freeongkira").innerHTML=e;document.getElementById("freeongkirb").innerHTML=e}freeOngkir();</script>
+
+
+{% if site.enable_anchorjs %}<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>{% endif %}
+

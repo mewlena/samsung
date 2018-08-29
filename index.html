@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{% assign posts_count = paginator.posts | size %}
+
+<div class="home">
+  {% if posts_count > 0 %}
+    <div class="posts">
+      <div class="clearfix col mmin">
+        {% for post in paginator.posts %}
+          <div class="col-per-4 mb2">
+            <div class="post py3">
+              {% if post.product-title == null %}<p class="post-meta">{{ post.date | date: site.date_format }}</p>{% endif %}
+              {% if post.product-title %}
+                <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+                  <div class="arti mr2">
+                    {% if post.image-square == null %}<img src="//drive.google.com/thumbnail?sz=w165&id={{ post.image-drive }}">{% endif %}
+                    {% if post.image-square %}<img src="{{ post.image-square}}">{% endif %}
+                    <h4 class="center post-title">{{ post.title }}</h4>
+                  </div>
+                </a>
+              {% endif %}
+              {% if post.product-title == null %}
+              <span class="post-summary">
+                {% if post.summary %}
+                  {{ post.summary }}
+                {% else %}
+                  {{ post.excerpt }}
+                {% endif %}
+              </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include pagination.html %}
+  {% else %}
+    <h1 class="center"'>{{ site.text.index.coming_soon }}</h1>
+  {% endif %}
+</div>

@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<div class="post-header mb2">
+  <h1 class="h1 center">{{ page.title }}</h1>
+</div>
+
+<div class="mb2 center"><img src="{{ page.image-main}}"></div>
+
+<article class="post-content">
+  {{ content }}
+  <p>Casing hardcase snap-on terbuat dari plastik tebal yang siap melindungi handphone anda.</p> 
+
+  <h4>✔️ Bahan tebal</h4>
+  <h4>✔️ Bisa menggunakan design/gambar sendiri</h4>
+  <h4>✔️ 100% baru dan berkualitas</h4>
+  <h4>✔️ Bikin hp jadi terlihat lebih kokoh</h4>
+  <h4>✔️ Semua lubang socket hp bisa di akses</h4> 
+</article>
+
+<h3>Spesifikasi {{ page.product-title }} </h3>
+
+{% assign spesifikasi = page.spesifikasi %}
+
+  <div class="mb2">
+    <ul>
+      {% for spek in spesifikasi %}
+      <li>{{ spek }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+<hr>
+
+{% assign gallery = page.gallery %}
+
+<h3 class="mt3 mb3">📷 Galeri Foto {{ page.product-title }} </h3>
+
+<!-- Flickity HTML lazyLoad 2 init -->
+<div class="carousel"
+  data-flickity='{ "lazyLoad": 2, "initialIndex": 2, "prevNextButtons": false }'>
+  {% for img in gallery %}
+  <div class="carousel-cell">
+    <img class="carousel-cell-image"
+      data-flickity-lazyload="{{ img.url }}" alt="{{ img.title }}" />
+    <p class="carousel-cell-title center mt2">{{ img.title }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+
+<div class="mt4 harga center">
+  <div class="h2 light-gray">Harga Normal <span class="light-gray coret">{{ page.harga| times: 1.3 | round | thousands_separated:"." | append:',- ' | prepend:' Rp. ' }}</span></div>
+  <div class="h2 blue mt1">{{ page.harga | thousands_separated:"." | append:',- ' | prepend:' Rp. '}}</div>
+  <div class="mb2 small">* Free ongkir syarat &amp; ketentuan berlaku</div>
+</div>
+
+<div class="mt2 center"><img src="{{ site.url }}/images/arrow.png"></div>
+
+<div class="pesan-wa center mt2">UNTUK PEMESANAN TEKAN TOMBOL DIBAWAH</div>
+<div class="center mt3">👇 K L I K 👇</div>
+<div class="center mt2">
+  <a href="{{ site.url }}/go/wa/" class="button button-green mb2"><img src="{{ site.url }}/images/whatsapp-logo.png"> Pesan Lewat Whatsapp</a>        
+</div>
+
+<h3 class="mt3 mb3">📢 Real Testimoni</h3>
+
+<img src="{{ site.url }}/images/testi-mix.jpg" width="840">
+
+<h3 class="mb3 center" id="pesan-via-cs">Customer Service Mewlena.com</h3>
+
+<div class="clearfix col">
+  <div class="col-half">
+    <div class="mb2 center">
+      <img class="profile-picture" src="{{ site.url }}/images/cs.jpg">
+      <h2>Sano <br>WA/SMS: 0823-2222-1906</h2>
+    </div>
+  </div>
+  <div class="col-half">
+    <div class="mb2"> 
+      <p class="center">Silahkan klik tombol di bawah untuk chat WHATSAPP / SMS kami secara otomatis tanpa harus mengetik.</p>
+      <p class="center">👇 K L I K 👇</p>
+      <p class="center">
+        <a href="{{ site.url }}/go/wa/" class="button button-green mb2"><img src="{{ site.url }}/images/whatsapp-logo.png"> Whatsapp</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+Bertransaksi <strong>AMAN</strong> dan <strong>NYAMAN</strong> dengan {{ site.title }} karena website kami menggunakan jalur data terenkripsi aman <span class="blue">SSL 128 bit</span> untuk melindungi data pribadi anda. Cek sertifikat SSL kami <a href="https://www.ssllabs.com/ssltest/analyze.html?d={{ site.url | replace_first: 'https://', '' }}" target="_blank">disini.</a>
+
+Melayani pengiriman ke <strong>seluruh Indonesia</strong>.
+
+<div class="center mt3 mb3"><img src="{{ site.url }}/images/payment-icon.png"></div>

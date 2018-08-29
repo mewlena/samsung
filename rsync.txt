@@ -1,0 +1,9 @@
+bundle exec jekyll build JEKYLL_ENV=production --destination _production
+ 
+rsync -crvz --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r --rsh='ssh -p22' --delete-after --delete-excluded --partial --progress /cygdrive/d/Jekyll/tokotaktis/_production/ root@45.76.146.158://var/www/tokotaktis.com/public_html
+
+---
+
+<!-- <span id="timer">00:00</span> -->
+
+/*function countdown(e,t){function o(){var e=document.getElementById("timer");setCookie("minutes",i,10),setCookie("seconds",n,10);var t=i-1;n--,e.innerHTML=t.toString()+":"+(10>n?"0":"")+String(n),n>0?timeoutHandle=setTimeout(o,1e3):i>1&&setTimeout(function(){countdown(parseInt(i)-1,!1)},1e3)}var n=60,i=e;if(getCookie("minutes")&&getCookie("seconds")&&t)var n=getCookie("seconds"),i=getCookie("minutes");o()}function setCookie(e,t,o){var n=new Date;n.setTime(n.getTime()+24*o*60*60*1e3);var i="expires="+n.toGMTString();document.cookie=e+"="+t+"; "+i}function getCookie(e){for(var t=e+"=",o=document.cookie.split(";"),n=0;n<o.length;n++){for(var i=o[n];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return""}var timeoutHandle;countdown(120,!0);*/

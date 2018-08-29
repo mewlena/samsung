@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Order via Whatsapp</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet"> 
+  <style>
+    html, body {
+      height: auto;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: 'Merriweather', serif;
+      line-height: 1.5;
+      font-size: 100%;
+      text-align: center;
+    }
+    
+    .blue{ 
+      color: #0076df;
+    }
+    
+    .green { 
+      color: #00cf26;
+    }
+    
+    #timer{ font-size: 5em; margin: 0; }
+    
+  </style>
+  <!-- Facebook Pixel Code -->
+  <!-- End Facebook Pixel Code -->
+</head>
+<body>
+  <h1> Mewlena.com </h1>
+  <h3>Tunggu sebentar, anda akan segera dihubungkan secara otomatis dengan <br><span class="green">Whatsapp</span> kami dalam: </h3>
+  <p id="timer">3</p>
+  <h4>Atau menghubungi kami secara manual di<br> 0823-2222-1906 (WA/SMS)</h4>
+  <script type="text/javascript">
+  var timeleft=3,downloadTimer=setInterval(function(){timeleft--,document.getElementById("timer").textContent=timeleft,timeleft<=0&&clearInterval(downloadTimer)},1e3);
+  setTimeout(function(){ 
+    var queryString = document.location.search.split("+").join(" ");
+    var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(queryString)) {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    if (params.u == undefined && params.t == undefined){
+      window.location = 'https://api.whatsapp.com/send?text=Halo%20Mewlena.com%2C%0D%0ASaya%20mau%20order%20custom%20casing.%20Bisa%20dibantu%3F&phone=6282322221906'; 
+      // window.location = 'whatsapp://send?text=Halo%20Mewlena.com%0D%0ASaya%20mau%20order%20custom%20casing.%20Bisa%20dibantu%3F&phone=6282322221906';
+    } else {
+      window.location = 'https://api.whatsapp.com/send?text=Halo%20Mewlena%2Ecom%2C%20%0D%0ASaya%20mau%20order%20custom%20casing.%20Bisa%20dibantu%3F%0D%0A%0D%0A'+ params.u +'&phone=6282322221906';
+    }
+  }, 2500);
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<div class="post-header mb2">
+  <h1 class="h2">Halaman Pemesanan: {{ page.title }}</h1>
+</div>
+
+<div class="mb2 clearfix">
+  <div class="mr3 left"><img src="{{ site.url }}/images/{{ page.image-square}}" width="120"></div>
+  <div class="light-gray">Harga Normal <span class="light-gray coret">{{ page.harga| times: 1.3 | round | thousands_separated:"." | append:',- ' | prepend:' Rp. ' }}</span></div>
+  <div class="h2 blue mt1 mb1">{{ page.harga | thousands_separated:"." | append:',- ' | prepend:' Rp. '}}</div>
+  <div class="blue small mb1">hemat {{ page.harga | times: 0.3 | round | thousands_separated:"." | append:',- ' | prepend:' Rp. ' }}</div>
+</div>
+
+<p class="mb2 small">* Free ongkos kirim meliputi Sumatera, Jawa, Bali, Kalimantan, Sulawesi, Lombok</p>
+
+<p><strong>🚚 Mohon isikan data Anda</strong> di form bawah ini dengan jelas untuk pengiriman paket.</p>
+
+<p>📨 <strong>Setelah data lengkap</strong>, kami akan informasikan keterangan cara pembayaran via <strong>sms dan email ke Anda</strong>.</p> 
+
+<hr>
+
+<form action="https://api.formbucket.com/f/buk_mH5OKjsKcUzBSt2PiKOpLzkL" method="POST" class="form-stacked mb2">
+  <label>
+    Produk
+    <input type="text" name="nama" class="field-light" value="Custom Case">
+  </label>
+  <label>
+    Keterangan order
+    <textarea type="text" name="alamat" class="field-light" rows="3" style="resize: vertical" placeholder="Misal: Jenis hp, design"></textarea>
+  </label>
+  <label>
+    Nama *
+    <input type="text" name="nama" class="field-light" required>
+  </label>
+  <label>
+    No Handphone *
+    <input type="text" name="hp" class="field-light" required>
+  </label>
+  <label>
+    Email (Opsional)
+    <input type="text" name="email" class="field-light">
+  </label>
+  <label>
+    Alamat *
+    <textarea type="text" name="alamat" class="field-light" rows="3" style="resize: vertical" required></textarea>
+  </label>
+  <div class="clearfix col mb2">
+    <div class="col-half">
+      <div>
+        <label>
+          Kecamatan *
+          <input type="text" name="kecamatan" class="field-light" required>
+        </label>
+      </div>
+    </div>
+    <div class="col-half">
+      <div>
+        <label>
+          Kabupaten / Kota *
+          <input type="text" name="kabupaten" class="field-light"  required>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <input type="submit" class="button button-blue button-big mobile-block" value="Kirim">
+</form>
+
+<p class="small mb3">Untuk melakukan pemesanan manual WA melalui CS kami, <a href="#pesan-via-cs">klik disini</a></p>
+
+<hr>
+
+&larr; <a href="{{ site.url }}{{ page.url | remove: '/order' }}.html">Kembali ke halaman produk: {{ page.title }}</a>
+
+<hr>
+
+Bertransaksi <strong>AMAN</strong> dan <strong>NYAMAN</strong> dengan {{ site.title }} karena website kami menggunakan jalur data terenkripsi aman <span class="blue">SSL 128 bit</span> untuk melindungi data pribadi anda. Cek sertifikat SSL kami <a href="https://www.ssllabs.com/ssltest/analyze.html?d={{ site.url | replace_first: 'https://', '' }}" target="_blank">disini.</a>
+
+Melayani pengiriman ke <strong>seluruh Indonesia</strong>.
+
+<div class="center mt3 mb3"><img src="{{ site.url }}/images/payment-icon.png"></div>
+  
